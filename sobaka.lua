@@ -1,7 +1,7 @@
 local Bracket = loadstring(game:HttpGet("https://raw.githubusercontent.com/AlexR32/Bracket/main/BracketV32.lua"))()
 Bracket:Notification() Bracket:Notification2()
 
-local Window = Bracket:Window({Name = "sobaka mota",Enabled = true,Color = Color3.new(205,92,92),Size = UDim2.new(0,496,0,496),Position = UDim2.new(0.5,-248,0.5,-248)}) do
+local Window = Bracket:Window({Name = "sobaka mota",Enabled = true,Color = Color3.new(1,0.5,0.5),Size = UDim2.new(0,496,0,496),Position = UDim2.new(0.5,-248,0.5,-248)}) do
 end
 
 local Tab = Window:Tab({Name = "WallHack and..."}) do
@@ -22,9 +22,9 @@ while wait(10) do
                     local esp = Instance.new("BoxHandleAdornment",childrik)
                     esp.Adornee = childrik
                     esp.ZIndex = 0
-                    esp.Size = Vector3.new(5, 5, 10)
-                    esp.Transparency = 0.65
-                    esp.Color3 = Color3.fromRGB(85, 165, 175)
+                    esp.Size = Vector3.new(7.64226, 4.33262, 16.6591)
+                    esp.Transparency = 0.4
+                    esp.Color3 = Color3.fromRGB(178,34,34)
                     esp.AlwaysOnTop = true
                     esp.Name = "EspBox"
                 end
@@ -96,8 +96,12 @@ s.Parent = game.Lighting
 end})
 
 local ButtonSky4 = TabSky:Button({Name = "ClearFog",Side = "Left",Callback = function()
-game.Lighting.Atmosphere:remove()
+game:GetService("Lighting").Atmosphere.Density = 0
+game:GetService("Lighting").Atmosphere.Glare = 0
+game:GetService("Lighting").Atmosphere.Haze = 0
+game:GetService("Lighting").Atmosphere.Offset = 0
 end})
+
 
 local Slider = Tab2:Slider({Name = "Slider",Side = "Left",Min = 0,Max = 200,Value = 50,Precise = 2,Unit = "",Callback = function(Number)
 game.workspace.CurrentCamera.FieldOfView = Number
