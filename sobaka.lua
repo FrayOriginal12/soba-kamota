@@ -115,7 +115,7 @@ CC      = game.Workspace.CurrentCamera
 ENABLED      = false
 ESP_ENABLED  = false
  
-_G.FREE_FOR_ALL = false
+_G.FREE_FOR_ALL = true
  
 _G.ESP_BIND    = 52
 _G.CHANGE_AIM  = 'q'
@@ -189,7 +189,7 @@ GUI_AIM_AT                         = Instance.new('TextLabel', GUI_MAIN)
 GUI_MAIN.Name                      = 'AIMBOT'
  
 GUI_TARGET.Size                    = UDim2.new(0,200,0,30)
-GUI_TARGET.BackgroundTransparency  = 1
+GUI_TARGET.BackgroundTransparency  = 0.5
 GUI_TARGET.BackgroundColor         = BrickColor.new('Fossil')
 GUI_TARGET.BorderSizePixel         = 0
 GUI_TARGET.Position                = UDim2.new(0.5,-100,0,0)
@@ -199,21 +199,19 @@ GUI_TARGET.TextStrokeTransparency  = 1
 GUI_TARGET.TextWrapped             = true
 GUI_TARGET.FontSize                = 'Size24'
 GUI_TARGET.Font                    = 'SourceSansBold'
-GUI_TARGET.Text.Transparency       = 1
-
+ 
 GUI_AIM_AT.Size                    = UDim2.new(0,200,0,20)
-GUI_AIM_AT.BackgroundTransparency  = 1
+GUI_AIM_AT.BackgroundTransparency  = 0.5
 GUI_AIM_AT.BackgroundColor         = BrickColor.new('Fossil')
 GUI_AIM_AT.BorderSizePixel         = 0
 GUI_AIM_AT.Position                = UDim2.new(0.5,-100,0,30)
-GUI_AIM_AT.Text                    = 'AIMING : Body'
+GUI_AIM_AT.Text                    = 'AIMING : HEAD'
 GUI_AIM_AT.TextColor3              = Color3.new(1,1,1)
 GUI_AIM_AT.TextStrokeTransparency  = 1
 GUI_AIM_AT.TextWrapped             = true
 GUI_AIM_AT.FontSize                = 'Size18'
 GUI_AIM_AT.Font                    = 'SourceSansBold'
-
-
+ 
 local TRACK = false
  
 function CREATE(BASE, TEAM)
@@ -229,7 +227,7 @@ function CREATE(BASE, TEAM)
  
 	ESP_DOT.Name                     = 'DOT'
 	ESP_DOT.BackgroundColor          = BrickColor.new('Bright red')
-	ESP_DOT.BackgroundTransparency   = 1
+	ESP_DOT.BackgroundTransparency   = 0.3
 	ESP_DOT.BorderSizePixel          = 0
 	ESP_DOT.Position                 = UDim2.new(-0.5, 0, -0.5, 0)
 	ESP_DOT.Size                     = UDim2.new(2, 0, 2, 0)
@@ -344,5 +342,4 @@ repeat
 		FIND()
 	end
 until ESP_ENABLED == false
-
 end})
